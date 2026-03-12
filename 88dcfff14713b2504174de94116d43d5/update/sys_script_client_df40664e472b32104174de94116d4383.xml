@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_script_client">
+    <sys_script_client action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <applies_extended>false</applies_extended>
+        <condition/>
+        <description>Automatically set Location to be used field value based on user location</description>
+        <field/>
+        <global>true</global>
+        <isolate_script>true</isolate_script>
+        <messages/>
+        <name>Set Loaner Location</name>
+        <order/>
+        <script><![CDATA[function onLoad() {
+
+    // This uses the dotwalking superpowers of the Scratchpad to use the requestor's city & state as the default location to be used. Make sure whomever you use for testing has values in their user record for this!
+
+    if (g_form.getValue('u_string_5') != '') {
+        return;
+    }
+
+    var city = g_scratchpad.city;
+    var country = g_scratchpad.country;
+
+    if (city && country) {
+        g_form.setValue('u_string_5', city + ', ' + country);
+    } else if (city) {
+        g_form.setValue('u_string_5', city);
+    } else if (country) {
+        g_form.setValue('u_string_5', country);
+    }
+
+    if (city || country) {
+        g_form.showFieldMsg('u_string_5', 'Value set automatically - you may override by editing', 'info');
+    }
+}
+]]></script>
+        <sys_class_name>sys_script_client</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-03-12 09:31:10</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>df40664e472b32104174de94116d4383</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name>Set Loaner Location</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="Loaner Request" source="x_1910612_loaner_0">88dcfff14713b2504174de94116d43d5</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Loaner Request">88dcfff14713b2504174de94116d43d5</sys_scope>
+        <sys_update_name>sys_script_client_df40664e472b32104174de94116d4383</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-03-12 09:46:17</sys_updated_on>
+        <table>x_1910612_loaner_0_loaner_requests</table>
+        <type>onLoad</type>
+        <ui_type>10</ui_type>
+        <view/>
+    </sys_script_client>
+</record_update>
