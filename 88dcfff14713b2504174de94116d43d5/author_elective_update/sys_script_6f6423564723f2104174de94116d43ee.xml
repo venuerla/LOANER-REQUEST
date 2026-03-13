@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_script">
+    <sys_script action="DELETE">
+        <abort_action>false</abort_action>
+        <access>package_private</access>
+        <action_delete>false</action_delete>
+        <action_insert>true</action_insert>
+        <action_query>false</action_query>
+        <action_update>true</action_update>
+        <active>true</active>
+        <add_message>false</add_message>
+        <advanced>true</advanced>
+        <change_fields>false</change_fields>
+        <client_callable>false</client_callable>
+        <collection>x_1910612_loaner_0_loaner_requests</collection>
+        <condition/>
+        <description/>
+        <execute_function>false</execute_function>
+        <filter_condition/>
+        <is_rest>false</is_rest>
+        <message/>
+        <name>Retrieved Credentials</name>
+        <order>100</order>
+        <priority>100</priority>
+        <rest_method/>
+        <rest_method_text/>
+        <rest_service/>
+        <rest_service_text/>
+        <rest_variables/>
+        <role_conditions/>
+        <script><![CDATA[var request = new sn_ws.RESTMessageV2();
+request.setEndpoint('https://dev316496.service-now.com/api/now/table/u_password_vault?sysparm_query=u_asset%3D'+ current.cmdb_ci.asset_tag +'&sysparm_fields=u_password&sysparm_limit=1');
+request.setHttpMethod('GET');
+
+//Eg. UserName="admin", Password="admin" for this code sample.
+var user = 'admin';
+var password = 'VTyCjJ3-=p5v';
+
+request.setBasicAuth(user,password);
+request.setRequestHeader("Accept","application/json");
+
+var response = request.execute();
+gs.log(response.getBody());]]></script>
+        <sys_class_name>sys_script</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-03-13 09:44:20</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>6f6423564723f2104174de94116d43ee</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Retrieved Credentials</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="Loaner Request" source="x_1910612_loaner_0">88dcfff14713b2504174de94116d43d5</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Loaner Request">88dcfff14713b2504174de94116d43d5</sys_scope>
+        <sys_update_name>sys_script_6f6423564723f2104174de94116d43ee</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-03-13 09:44:20</sys_updated_on>
+        <template/>
+        <when>async_always</when>
+    </sys_script>
+    <sys_translated_text action="DELETE" query="documentkey=6f6423564723f2104174de94116d43ee"/>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="Loaner Request">88dcfff14713b2504174de94116d43d5</application>
+        <file_path/>
+        <instance_id>a8700304fb38a6d00921f633beefdc49</instance_id>
+        <instance_name>dev316496</instance_name>
+        <name>sys_script_6f6423564723f2104174de94116d43ee</name>
+        <payload>&lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;record_update sys_domain="global" table="sys_script"&gt;&lt;sys_script action="INSERT_OR_UPDATE"&gt;&lt;abort_action&gt;false&lt;/abort_action&gt;&lt;access&gt;package_private&lt;/access&gt;&lt;action_delete&gt;false&lt;/action_delete&gt;&lt;action_insert&gt;true&lt;/action_insert&gt;&lt;action_query&gt;false&lt;/action_query&gt;&lt;action_update&gt;true&lt;/action_update&gt;&lt;active&gt;true&lt;/active&gt;&lt;add_message&gt;false&lt;/add_message&gt;&lt;advanced&gt;true&lt;/advanced&gt;&lt;change_fields&gt;false&lt;/change_fields&gt;&lt;client_callable&gt;false&lt;/client_callable&gt;&lt;collection&gt;x_1910612_loaner_0_loaner_requests&lt;/collection&gt;&lt;condition/&gt;&lt;description/&gt;&lt;execute_function&gt;false&lt;/execute_function&gt;&lt;filter_condition/&gt;&lt;is_rest&gt;false&lt;/is_rest&gt;&lt;message/&gt;&lt;name&gt;Retrieved Credentials&lt;/name&gt;&lt;order&gt;100&lt;/order&gt;&lt;priority&gt;100&lt;/priority&gt;&lt;rest_method/&gt;&lt;rest_method_text/&gt;&lt;rest_service/&gt;&lt;rest_service_text/&gt;&lt;rest_variables/&gt;&lt;role_conditions/&gt;&lt;script&gt;&lt;![CDATA[var request = new sn_ws.RESTMessageV2();
+request.setEndpoint('https://dev316496.service-now.com/api/now/table/u_password_vault?sysparm_query=u_asset%3D'+ current.cmdb_ci.asset_tag +'&amp;sysparm_fields=u_password&amp;sysparm_limit=1');
+request.setHttpMethod('GET');
+
+//Eg. UserName="admin", Password="admin" for this code sample.
+var user = 'admin';
+var password = 'VTyCjJ3-=p5v';
+
+request.setBasicAuth(user,password);
+request.setRequestHeader("Accept","application/json");
+
+var response = request.execute();
+gs.log(response.getBody());]]&gt;&lt;/script&gt;&lt;sys_class_name&gt;sys_script&lt;/sys_class_name&gt;&lt;sys_created_by&gt;admin&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2026-03-13 09:44:20&lt;/sys_created_on&gt;&lt;sys_domain&gt;global&lt;/sys_domain&gt;&lt;sys_domain_path&gt;/&lt;/sys_domain_path&gt;&lt;sys_id&gt;6f6423564723f2104174de94116d43ee&lt;/sys_id&gt;&lt;sys_mod_count&gt;0&lt;/sys_mod_count&gt;&lt;sys_name&gt;Retrieved Credentials&lt;/sys_name&gt;&lt;sys_overrides/&gt;&lt;sys_package display_value="Loaner Request" source="x_1910612_loaner_0"&gt;88dcfff14713b2504174de94116d43d5&lt;/sys_package&gt;&lt;sys_policy/&gt;&lt;sys_scope display_value="Loaner Request"&gt;88dcfff14713b2504174de94116d43d5&lt;/sys_scope&gt;&lt;sys_update_name&gt;sys_script_6f6423564723f2104174de94116d43ee&lt;/sys_update_name&gt;&lt;sys_updated_by&gt;admin&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2026-03-13 09:44:20&lt;/sys_updated_on&gt;&lt;template/&gt;&lt;when&gt;async_always&lt;/when&gt;&lt;/sys_script&gt;&lt;sys_translated_text action="delete_multiple" query="documentkey=6f6423564723f2104174de94116d43ee"/&gt;&lt;/record_update&gt;</payload>
+        <payload_hash>-1782935650</payload_hash>
+        <record_name>Retrieved Credentials</record_name>
+        <reverted_from/>
+        <source>f4dad71247efb2104174de94116d43a1</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-03-13 09:44:20</sys_created_on>
+        <sys_id>0c6def964763f2104174de94116d437a</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>19ce69528650000001</sys_recorded_at>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-03-13 09:44:20</sys_updated_on>
+        <type>Business Rule</type>
+        <update_guid>086def968063f210a387ea3e79bda479</update_guid>
+        <update_guid_history>086def968063f210a387ea3e79bda479:-1782935650</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete/>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-03-13 09:46:18</sys_created_on>
+        <sys_db_object display_value="" name="sys_script">sys_script</sys_db_object>
+        <sys_id>183bea037c9d4e429d334431ba3e6a79</sys_id>
+        <sys_metadata>6f6423564723f2104174de94116d43ee</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Retrieved Credentials</sys_name>
+        <sys_package display_value="Loaner Request" source="x_1910612_loaner_0">88dcfff14713b2504174de94116d43d5</sys_package>
+        <sys_parent display_value="Loaner Requests">3eadfb754713b2504174de94116d43bd</sys_parent>
+        <sys_policy/>
+        <sys_scope display_value="Loaner Request">88dcfff14713b2504174de94116d43d5</sys_scope>
+        <sys_scope_delete display_value="">75beb943822d4200931e4edfef689000</sys_scope_delete>
+        <sys_update_name>sys_script_6f6423564723f2104174de94116d43ee</sys_update_name>
+        <sys_update_version display_value="sys_script_6f6423564723f2104174de94116d43ee">0c6def964763f2104174de94116d437a</sys_update_version>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-03-13 09:46:18</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

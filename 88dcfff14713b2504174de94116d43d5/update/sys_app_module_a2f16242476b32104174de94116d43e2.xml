@@ -18,14 +18,14 @@
         <query/>
         <report/>
         <require_confirmation>true</require_confirmation>
-        <roles/>
+        <roles>x_1910612_loaner_0.admin,x_1910612_loaner_0.user</roles>
         <sys_class_name>sys_app_module</sys_class_name>
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2026-03-12 09:38:33</sys_created_on>
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>a2f16242476b32104174de94116d43e2</sys_id>
-        <sys_mod_count>0</sys_mod_count>
+        <sys_mod_count>1</sys_mod_count>
         <sys_name>All</sys_name>
         <sys_overrides/>
         <sys_package display_value="Loaner Request" source="x_1910612_loaner_0">88dcfff14713b2504174de94116d43d5</sys_package>
@@ -33,7 +33,7 @@
         <sys_scope display_value="Loaner Request">88dcfff14713b2504174de94116d43d5</sys_scope>
         <sys_update_name>sys_app_module_a2f16242476b32104174de94116d43e2</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2026-03-12 09:38:33</sys_updated_on>
+        <sys_updated_on>2026-03-12 11:25:14</sys_updated_on>
         <timeline_page/>
         <title>All</title>
         <uncancelable>false</uncancelable>

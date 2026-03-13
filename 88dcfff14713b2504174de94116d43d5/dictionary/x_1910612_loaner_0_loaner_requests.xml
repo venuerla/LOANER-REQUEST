@@ -1,10 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?><database>
     <element db_object_id="3eadfb754713b2504174de94116d43bd" extends="task" label="Loaner Requests" max_length="40" name="x_1910612_loaner_0_loaner_requests" type="collection">
-        <element attributes="encode_utf8=false" label="Requested For" max_length="32" name="requested_for" reference="sys_user" type="reference"/>
+        <element attributes="encode_utf8=false" label="Requested For" mandatory="true" max_length="32" name="requested_for" reference="sys_user" type="reference"/>
+        <element label="pickup reminder" max_length="255" name="pickup_reminder" type="glide_date_time"/>
         <element attributes="edge_encryption_enabled=true" label="Location to be used" max_length="40" name="u_string_5" type="string"/>
         <element attributes="edge_encryption_enabled=true" label="Other" max_length="40" name="u_other" type="string"/>
-        <element attributes="edge_encryption_enabled=true" label="End date" max_length="40" name="u_glide_date_time_3" type="glide_date_time"/>
+        <element label="Overdue reminder" max_length="255" name="overdue_reminder" type="glide_date_time"/>
+        <element attributes="edge_encryption_enabled=true" label="End date" mandatory="true" max_length="40" name="u_glide_date_time_3" type="glide_date_time"/>
         <element attributes="edge_encryption_enabled=true" label="Description" max_length="40" name="u_string_8" type="string"/>
+        <element label="Return reminder" max_length="255" name="return_reminder" type="glide_date_time"/>
         <element attributes="edge_encryption_enabled=true" choice="3" default="laptop" label="Item type" max_length="40" name="u_choice_4" type="string">
             <choice>
                 <element inactive_on_update="false" label="Laptop" sequence="0" value="laptop"/>
@@ -12,15 +15,17 @@
                 <element inactive_on_update="false" label="Mobile phone" sequence="1" value="mobile phone"/>
             </choice>
         </element>
+        <element label="Overdue count" max_length="255" name="overdue_count" type="integer"/>
         <element label="Name" max_length="40" name="name" type="string"/>
         <element attributes="edge_encryption_enabled=true" choice="1" label="State" max_length="40" name="u_choice_1" type="string">
             <choice>
-                <element inactive_on_update="false" label="Closed" sequence="4" value="closed"/>
-                <element inactive_on_update="false" label="Resolved" sequence="3" value="resolved"/>
-                <element inactive_on_update="false" label="New" sequence="0" value="new"/>
-                <element inactive_on_update="false" label="On Hold" sequence="2" value="on hold"/>
-                <element inactive_on_update="false" label="Canceled" sequence="5" value="canceled"/>
-                <element inactive_on_update="false" label="In Progress" sequence="1" value="in progress"/>
+                <element inactive_on_update="false" label="checked out" sequence="4" value="closed"/>
+                <element inactive_on_update="false" label="ready for pickup" sequence="3" value="resolved"/>
+                <element inactive_on_update="false" label="closed complete" sequence="6" value="closed complete"/>
+                <element inactive_on_update="false" label="Requested" sequence="0" value="new"/>
+                <element inactive_on_update="false" label="deployment prep" sequence="2" value="on hold"/>
+                <element inactive_on_update="false" label="post deployment" sequence="5" value="canceled"/>
+                <element inactive_on_update="false" label="Reserved" sequence="1" value="in progress"/>
             </choice>
         </element>
         <element attributes="edge_encryption_enabled=true" choice="1" label="Depot" max_length="40" name="u_choice_6" type="string">
@@ -30,7 +35,7 @@
                 <element inactive_on_update="false" label="Hr" sequence="1" value="Choice 2"/>
             </choice>
         </element>
-        <element attributes="edge_encryption_enabled=true" label="Start date" max_length="40" name="u_glide_date_time_2" type="glide_date_time"/>
+        <element attributes="edge_encryption_enabled=true" label="Start date" mandatory="true" max_length="40" name="u_glide_date_time_2" type="glide_date_time"/>
         <element attributes="edge_encryption_enabled=true" label="Short description" max_length="40" name="u_string_7" type="string"/>
     </element>
 </database>
